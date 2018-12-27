@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Play sound !</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #d6d6d6;
+      }
+
+      .wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        text-align: center;
+      }
+
+      button {
+        padding: 20px 40px;
+        font-size: 30px;
+        background-color: #0f96c8;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        box-shadow: 0px 22px 5px -14px rgba(0, 0, 0, 0.75);
+        color: rgba(0, 0, 0, 0.75);
+      }
+
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <button class="play">
+        Play Sound <i class="fas fa-play-circle"></i>
+      </button>
+      <button class="pause">Pause <i class="fas fa-pause-circle"></i></button>
+      <button class="stop">Stop <i class="fas fa-stop-circle"></i></button>
+    </div>
+    <script>
+      const btn = document.querySelector(".play");
+      const btn1 = document.querySelector(".pause");
+      const btn2 = document.querySelector(".stop");
+
+      let audio = new Audio("dd.mp3");
+      btn.addEventListener("click", function() {
+        audio.play();
+      });
+      btn1.addEventListener("click", function() {
+        audio.pause();
+      });
+      btn2.addEventListener("click", function() {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    </script>
+  </body>
+</html>
